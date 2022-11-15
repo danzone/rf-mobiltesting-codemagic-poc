@@ -1,0 +1,18 @@
+workflows:
+  rf-tests:
+    name: Robot Framework mobile tests
+    instance_type: linux
+    scripts:
+      - name: Install Appium
+        script: npm install --location=global appium
+      - name: Install Robot Framework
+        script: pip install robotframework robotframework-appiumlibrary
+      - name: Launch emulator
+        script: |
+          cd $ANDROID_HOME/tools
+          emulator -avd emulator &
+          adb wait-for-device
+      - name: Test
+        script: |
+          robot TestSuite.robot
+          adb logcat -d > emulator.log
