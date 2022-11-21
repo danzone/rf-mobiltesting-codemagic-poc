@@ -17,5 +17,6 @@ workflows:
           adb wait-for-device
       - name: Test
         script: |
-          robot TestSuite.robot
+          robot TestSuite.robot --outputDir rf-results
           adb logcat -d > emulator.log
+          cp  -r rf-results $CM_EXPORT_DIR/rf-results
