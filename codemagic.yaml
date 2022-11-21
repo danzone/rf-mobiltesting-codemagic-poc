@@ -20,3 +20,4 @@ workflows:
           robot --outputDir rf-results TestSuite.robot
           adb logcat -d > emulator.log
           cp  -r rf-results $CM_EXPORT_DIR/rf-results
+          cp emulator.log $CM_EXPORT_DIR/
