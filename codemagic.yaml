@@ -1,7 +1,7 @@
 workflows:
   rf-tests:
     name: Robot Framework mobile tests
-    instance_type: mac_mini_m1
+    instance_type: linux
     triggering:
       events:
         - push
