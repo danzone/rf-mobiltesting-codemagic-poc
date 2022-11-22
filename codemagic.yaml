@@ -2,9 +2,6 @@ workflows:
   rf-tests:
     name: Robot Framework mobile tests
     instance_type: linux
-    triggering:
-      events:
-        - push
     scripts:
       - name: Install Appium
         script: npm install --location=global appium
