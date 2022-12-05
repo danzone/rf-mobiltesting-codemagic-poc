@@ -2,6 +2,8 @@ workflows:
   rf-tests:
     name: Robot Framework mobile tests
     instance_type: linux
+    environment:
+      xcode: 13.4
     scripts:
       - name: Install Appium
         script: npm install --location=global appium
