@@ -2,7 +2,7 @@
 Documentation   Keywords to enter operands and operators
 ...             and to check results
 Library     Process
-
+Library     AppiumLibrary
 
 *** Variables ***
 ${REMOTE_URL}           http://127.0.0.1:4723/wd/hub
@@ -21,7 +21,7 @@ ${DISPLAYED_SYMBOLIC_RESULT}    xpath=//*[contains(@resource-id,'com.google.andr
 Start Appium Server
     [Documentation]     Starts Appium server
     Start Process  appium  shell=True  alias=appiumserver
-    ...     stdout=${CURDIR}/appium_stdout.txt  stderr=${CURDIR}/appium_stderr.txt
+    ...     stdout=${CURDIR}/../appium_stdout.txt  stderr=${CURDIR}/../appium_stderr.txt
     Process Should Be Running  appiumserver
     Sleep  10s
 
