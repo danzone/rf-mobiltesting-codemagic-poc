@@ -9,7 +9,7 @@ ${REMOTE_URL}           http://127.0.0.1:4723/wd/hub
 ${PLATFORM_NAME}        Android
 ${PLATFORM_VERSION}     10.0
 ${DEVICE_NAME}          emulator-5554
-${APP_PATH}             ${CURDIR}/../apps/calculator.apk
+${APP_PATH}             ../apps/calculator.apk
 
 # Element locators
 ${EQUALS_SIGN}                  xpath=//android.widget.ImageButton[@content-desc="equals"]
