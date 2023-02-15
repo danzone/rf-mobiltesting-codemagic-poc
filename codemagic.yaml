@@ -2,8 +2,6 @@ workflows:
   rf-tests:
     name: Robot Framework mobile tests
     instance_type: linux
-    environment:
-      xcode: 13.4
     scripts:
       - name: Install Appium
         script: npm install --location=global appium
@@ -11,12 +9,12 @@ workflows:
         script: pip install robotframework robotframework-appiumlibrary
       - name: Launch emulator
         script: |
-          cd $ANDROID_HOME/tools
+          cd /usr/local/android/sdk//tools
           emulator -avd emulator &
           adb wait-for-device
       - name: Test
         script: |
-          robot --outputDir rf-results TestSuite.robot
+          robot --outputDir rf-results tests
           adb logcat -d > emulator.log
           cp  -r rf-results $CM_EXPORT_DIR/rf-results
           cp emulator.log $CM_EXPORT_DIR/
